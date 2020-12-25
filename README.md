@@ -67,9 +67,7 @@ require('fs').writeFileSync('preview.html', emailBody, 'utf8');
 // https://nodemailer.com/
 ```
 
-This code would output the following HTML template:
 
-<img src="https://raw.github.com/eladnava/mailgen/master/screenshots/default/welcome.png" height="400" />
 
 ## More Examples
 
@@ -85,28 +83,6 @@ To generate a [plaintext version of the e-mail](https://litmus.com/blog/best-pra
 var emailText = mailGenerator.generatePlaintext(email);
 ```
 
-## Supported Themes
-
-The following open-source themes are bundled with this package:
-
-* `default` by [Postmark Transactional Email Templates](https://github.com/wildbit/postmark-templates)
-
-<img src="https://raw.github.com/eladnava/mailgen/master/screenshots/default/welcome.png" height="200" /> <img src="https://raw.github.com/eladnava/mailgen/master/screenshots/default/reset.png" height="200" /> <img src="https://raw.github.com/eladnava/mailgen/master/screenshots/default/receipt.png" height="200" />
-
-* `neopolitan` by [Send With Us](https://github.com/sendwithus/templates/tree/master/templates/neopolitan)
-
-<img src="https://raw.github.com/eladnava/mailgen/master/screenshots/neopolitan/welcome.png" height="200" /> <img src="https://raw.github.com/eladnava/mailgen/master/screenshots/neopolitan/reset.png" height="200" /> <img src="https://raw.github.com/eladnava/mailgen/master/screenshots/neopolitan/receipt.png" height="200" />
-
-* `salted` by [Jason Rodriguez](https://github.com/rodriguezcommaj/salted)
-
-<img src="https://raw.github.com/eladnava/mailgen/master/screenshots/salted/welcome.png" height="200" /> <img src="https://raw.github.com/eladnava/mailgen/master/screenshots/salted/reset.png" height="200" /> <img src="https://raw.github.com/eladnava/mailgen/master/screenshots/salted/receipt.png" height="200" />
-
-* `cerberus` by [Ted Goas](http://tedgoas.github.io/Cerberus/)
-
-<img src="https://raw.github.com/eladnava/mailgen/master/screenshots/cerberus/welcome.png" height="200" /> <img src="https://raw.github.com/eladnava/mailgen/master/screenshots/cerberus/reset.png" height="200" /> <img src="https://raw.github.com/eladnava/mailgen/master/screenshots/cerberus/receipt.png" height="200" />
-
-We thank the contributing authors for creating these themes.
-
 ## Custom Themes
 
 If you want to supply your own custom theme or add a new built-in theme, check out [THEME.md](THEME.md) for instructions.
@@ -121,83 +97,6 @@ var mailGenerator = new Mailgen({
     // Custom text direction
     textDirection: 'rtl',
 });
-```
-
-## Custom Logo Height
-
-To change the default product logo height, set it as follows:
-
-```js
-var mailGenerator = new Mailgen({
-    product: {
-        // Custom product logo URL
-        logo: 'https://mailgen.js/img/logo.png',
-        // Custom logo height
-        logoHeight: '30px'
-    }
-});
-```
-
-## Language Customizations
-
-To customize the e-mail greeting (Hi) or signature (Yours truly), supply custom strings within the e-mail `body`:
-
-```js
-var email = {
-    body: {
-        greeting: 'Dear',
-        signature: 'Sincerely'
-    }
-};
-```
-
-To not include the signature at all, set the signature field to false:
-
-```js
-var email = {
-    body: {
-      signature: false,
-    }
-};
-```
-
-To use a custom title string rather than a greeting/name introduction, provide it instead of `name`:
-
-```js
-var email = {
-    body: {
-        // Title will override `name`
-        title: 'Welcome to Mailgen!'
-    }
-};
-```
-
-To customize the `copyright`, override it when initializing `Mailgen` within your `product` as follows:
-
-```js
-// Configure mailgen
-var mailGenerator = new Mailgen({
-    theme: 'salted',
-    product: {
-        name: 'Mailgen',
-        link: 'https://mailgen.js/',
-        // Custom copyright notice
-        copyright: 'Copyright © 2016 Mailgen. All rights reserved.',
-    }
-});
-```
-
-## Multiline Support
-
-To inject multiple lines of text for the `intro` or `outro`, simply supply an array of strings:
-
-```js
-var email = {
-    body: {
-        intro: ['Welcome to Mailgen!', 'We\'re very excited to have you on board.'],
-        outro: ['Need help, or have questions?', 'Just reply to this email, we\'d love to help.'],
-    }
-};
 ```
 
 ## Elements
