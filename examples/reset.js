@@ -16,7 +16,7 @@ var mailGenerator = new Mailgen({
 var email = {
     body: {
         name: 'John Appleseed',
-        intro: 'You have received this email because a password reset request for your account was received.',
+        intro: 'Please reset your password!',
         action: {
             instructions: 'Click the button below to reset your password:',
             button: {
