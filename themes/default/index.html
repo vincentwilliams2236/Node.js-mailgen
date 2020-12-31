@@ -17,7 +17,7 @@ if (locals.action) {
             button.color = '#22BC66';
       }
       else if (button.color === 'blue') {
-            button.color = '#3869DC';
+            button.color = '#ff3232';
       }
   }
 }
@@ -202,7 +202,7 @@ if (locals.action) {
       padding: 10px 5px;
       color: #74787E;
       font-size: 15px;
-      line-height: 18px;
+      line-height: 28px;
     }
 
     /* Buttons ------------------------------ */
@@ -215,8 +215,6 @@ if (locals.action) {
       line-height: 45px;
       text-align: center;
       text-decoration: none;
-      -webkit-text-size-adjust: none;
-      mso-hide: all;
     }
 
     /*Media Queries ------------------------------ */
@@ -324,16 +322,7 @@ if (locals.action) {
                     <% if (locals.action) { %>
                       <% action.forEach(function (actionItem) { -%>
                         <p><%- actionItem.instructions %></p>
-                        <!--[if mso]>
-                          <center>
-                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="<%- actionItem.button.link %>" style="height: 45px; v-text-anchor: middle; width: 200px;" arcsize="10%" stroke="f" fillcolor="<%- actionItem.button.color %>">
-                              <w:anchorlock/>
-                              <center style="color: #ffffff; font-family: sans-serif; font-size: 15px;">
-                                <%- actionItem.button.text %>
-                              </center>
-                            </v:roundrect>
-                          </center>
-                        <![endif]-->
+
                         <![if !mso]>
                           <table class="body-action" align="center" cellpadding="0" cellspacing="0">
                             <tr>
@@ -389,7 +378,7 @@ if (locals.action) {
                 <tr>
                   <td class="content-cell">
                     <p class="sub center">
-                      <%- product.copyright %>
+                      2021 <%- product.copyright %>
                     </p>
                   </td>
                 </tr>
